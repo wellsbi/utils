@@ -69,8 +69,6 @@ public class Data {
 
     	return builder.build();
     }
-    
-    
 
 }
 
