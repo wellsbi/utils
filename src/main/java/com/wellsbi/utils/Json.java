@@ -11,9 +11,14 @@ import com.google.gson.GsonBuilder;
  *
  */
 public class Json {
-	static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
+	static final Gson PRETTY = new GsonBuilder().setPrettyPrinting().create();
+	static final Gson LEAN = new GsonBuilder().create();
 	
-	public static String pretty (Object bean) {
-		return GSON.toJson(bean);
-	}
+	public static <T> String pretty (T t) { return PRETTY.toJson(t); }
+	
+	public static <T> String lean (T t) { return LEAN.toJson(t); }
+	
+	public static <T> byte[] bytes (T t) { return lean(t).getBytes(); }
+	
+	public static <T> T hydrate (String json, Class<T> clazz) { return LEAN.fromJson (json, clazz); }
 }

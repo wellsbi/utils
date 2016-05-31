@@ -4,7 +4,7 @@
 	<groupId>com.wellsbi</groupId>
 	<artifactId>wellsbi-utils</artifactId>
 	<packaging>jar</packaging>
-	<version>1.0-SNAPSHOT</version>
+	<version>1.1-SNAPSHOT</version>
 	<name>Utils</name>
 	<url>http://maven.apache.org</url>
 
@@ -73,6 +73,12 @@
 			<artifactId>guava</artifactId>
 			<version>18.0</version>
 		</dependency>
+        <!-- Redis -->
+        <dependency>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
+            <version>2.7.2</version>
+        </dependency>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
