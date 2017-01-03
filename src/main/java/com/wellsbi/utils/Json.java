@@ -12,11 +12,13 @@ import com.google.gson.GsonBuilder;
  */
 public class Json {
 	static final Gson PRETTY = new GsonBuilder().setPrettyPrinting().create();
-	static final Gson LEAN = new GsonBuilder().create();
+	static final Gson LEAN = new GsonBuilder().setDateFormat("yyyy-MM-dd").create();
 	
 	public static <T> String pretty (T t) { return PRETTY.toJson(t); }
 	
-	public static <T> String lean (T t) { return LEAN.toJson(t); }
+	public static <T> String lean (T t) { 
+		 return LEAN.toJson(t);
+	}
 	
 	public static <T> byte[] bytes (T t) { return lean(t).getBytes(); }
 	
